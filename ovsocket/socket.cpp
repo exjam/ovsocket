@@ -1,10 +1,11 @@
 #include "socket.h"
+#include <cassert>
 
 namespace ovs
 {
 
 // Default size of 32
-LocklessPool<Request> requestPool = LocklessPool<Request> { 32 };
+LocklessPool<Request> requestPool { 32 };
 
 Socket::Socket() :
    mSocket(INVALID_SOCKET)
